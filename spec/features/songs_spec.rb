@@ -1,3 +1,4 @@
+require 'pry'
 require 'rails_helper'
 
 describe "songs", type:  :feature do
@@ -5,7 +6,9 @@ describe "songs", type:  :feature do
     Artist.destroy_all
     Song.destroy_all
     @artist = Artist.create!(name: "Daft Punk")
-    @song = @artist.songs.create!(title: "The Grid")
+    @song = Song.create!(title: "The Grid")
+    @song.artist = @artist
+    @song.save
   end
 
   it "lists songs in 'Artist Name - Song Title' format" do
