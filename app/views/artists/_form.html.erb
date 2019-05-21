@@ -1,0 +1,9 @@
+<%= form_for @artist  do |f| %>
+    <% if request.path == '/artists/new' %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br />
+  
+    <%= f.submit %>
+<% end %>
+
